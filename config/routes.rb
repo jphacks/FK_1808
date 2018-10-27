@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :schedules, only: [:create]
   resources :groups, only: [:index]
   resources :users, only: [:edit, :update]
+  get "/users/:id/show", to: "users#show", as: :show
   get "/events", to: "schedules#events"
   get "/groups/events", to: "groups#groups"
 end

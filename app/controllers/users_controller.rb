@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
 
+  def show
+    
+  end
+
   def edit
     @user = current_user
   end
@@ -14,6 +18,6 @@ class UsersController < ApplicationController
   
   private
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :gender, :prefecture, :age, :description)
   end
 end
