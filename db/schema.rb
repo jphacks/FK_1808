@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2018_10_27_102737) do
     t.integer "user_id"
     t.datetime "start"
     t.string "title"
-    t.string "prefecture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
