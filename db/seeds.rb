@@ -17,6 +17,7 @@ end
   10.times do |day|
     Schedule.create(title: "予定なし",
                    user_id: user_id,
+                   place: "福岡県"
                    start: DateTime.new(2018, 10, day+1))
   end
 end
