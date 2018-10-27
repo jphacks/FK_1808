@@ -13,11 +13,11 @@ class SchedulesController < ApplicationController
   end
 
   def events
-    @schedules = Schedule.all
+    @schedules = current_user.schedules
     respond_to do |format|
       format.json {
         render json: 
-        @schedules.to_json(only: [:title, :start, :end])
+        @schedules.to_json(only: [:title, :start])
       }
     end
   end
