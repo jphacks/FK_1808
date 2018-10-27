@@ -9,11 +9,17 @@
   <body>
     <%= render 'layouts/header' %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<main>
 
-    <%= yield %>
-    
+    <p class="notice"><%= notice %></p>
+
+    <section class="content">
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </section>
+
+</main>
+
     <%= render 'layouts/footer' %>
   </body>
 </html>
