@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import 'fullcalendar';
 
 @charset "UTF-8";
 
@@ -98,16 +99,6 @@ main {
   width: 400px;
   margin: 0 auto;
   padding: 4px 8px;
-}
-
-.content h1 {
-  color: #fff;
-  font-style: italic;
-  font-weight: bold;
-  text-align: center;
-}
-.content label {
-  color: #fff;
 }
 input[type=text],
 input[type=email],

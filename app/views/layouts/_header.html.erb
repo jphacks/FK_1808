@@ -1,16 +1,17 @@
-<header>
-  <h1>タイトル</h1>
-  <div class="clear">
-    <p class="header--txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <img src="https://placehold.jp/40/000/fff/60x60.jpg?text=JP" class="header--img">
-  </div>
-  <nav class="header--nav">
-    <ul>
-      <li><a href="">lorem</a></li>
-      <li><a href="">lorem</a></li>
-      <li><a href="">lorem</a></li>
-      <li><a href="">lorem</a></li>
-      <li><a href="">lorem</a></li>
-    </ul>
-  </nav>
-</header>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <%= link_to "エン交", root_path, class: "navbar-brand"%>
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto">
+  </ul>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <% if current_user %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"%>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "nav-link"%>
+      <% end %>
+    </li>
+  </ul>
+</nav>
