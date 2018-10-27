@@ -20,12 +20,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
                 end
             end
             flash[:notice] = "ログインしました"
-            redirect_to edit_path
+            redirect_to root_path
         end
 
-        def edit
-            @omniauth = request.env['omniauth.auth']
-            @profile = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
+        def fake_email(uid,provider)
+            return "#{auth.uid}-#{auth.provider}@example.com"
         end
 
         

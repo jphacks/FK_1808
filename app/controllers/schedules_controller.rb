@@ -3,6 +3,7 @@ class SchedulesController < ApplicationController
 
   def index
   end
+  
   def create
     date = DateTime.new(Integer(params[:date][:year]), Integer(params[:date][:month]), Integer(params[:date][:day]))
     @schedule = current_user.schedules.find_by(start: date)
