@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
+<<<<<<< HEAD
          :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:line]
 
@@ -23,4 +24,10 @@ end
     self.raw_info = raw_info.to_json
     self.save!
   end
+=======
+         :recoverable, :rememberable, :validatable
+  has_many :schedules
+  has_many :user_groups
+  has_many :groups, through: :user_groups
+>>>>>>> 92ad0ae5ec716593eb2da73472f12fe435663516
 end
