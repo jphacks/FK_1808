@@ -1,48 +1,53 @@
 require 'line/bot'
 
 class WebhookController < ApplicationController
-
     protect_from_forgery with: :null_session
 
+    def callback
 
-def client
-    @client ||= Line::Bot::Client.new { |config|
-        config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-        config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-    }
-end
+        date = DateTime.now
 
-def  error
-end
 
-def callback
-    body = request.body.read
+        @client ||= Line::Bot::Client.new { |config|
+            #config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
+            #config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
+            # ローカルで動かすだけならベタ打ちでもOK
+            config.channel_secret = ENV["LINE_CHSNNEL_SECRET"]
+            config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
+        }
 
-    signature = request.env['HTTP_X_LINE_SIGNATURE']
-    unless client.validate_signature(body, signature)
-        error 400 do 'Bad Request' end
-    end
+        body = request.body.read
+        events = @client.parse_events_from(body)
+        events
+        events.each { |event|
+            case event
+                when Line::Bot::Event::Message
 
-    events = client.parse_events_from(body)
-    events.each { |event|
-        case event
-            when Line::Bot::Event::Message
-            case event.type
-                when Line::Bot::Event::MessageType::Text
-                message = {
-                    type: 'text',
-                    text: event.message['text']
-                }
-                client.reply_message(event['replyToken'], message)
-                when Line::Bot::Event::MessageType::Image, Line::Bot::Event::MessageType::Video
-                response = client.get_message_content(event.message['id'])
-                tf = Tempfile.open("content")
-                tf.write(response.body)
+                case event.type
+                    when Line::Bot::Event::MessageType::Text
+                    message = {
+                        type: 'text',
+                        text: event.message['text']
+                    }
+                    @client.reply_message(event['replyToken'], message)
+                    message2 = {
+                        type: 'text',
+                        text: "ありがとう"
+                    }
+                    message3 = {
+                        type: 'text',
+                        text: date
+                    }
+                    @client.push_message(event['source']['userId'],message2)
+                    @client.push_message(event['source']['userId'],message3)
+                    when Line::Bot::Event::MessageType::Image, Line::Bot::Event::MessageType::Video
+                    response = @client.get_message_content(event.message['id'])
+                    tf = Tempfile.open("content")
+                    tf.write(response.body)
+                end
             end
-        end
-    }
-
-    "OK"
+        }
+        "OK"
     end
 
 end
