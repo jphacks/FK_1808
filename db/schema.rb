@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2018_10_27_043756) do
   create_table "schedules", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "start"
-    t.datetime "end"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,8 +33,6 @@ ActiveRecord::Schema.define(version: 2018_10_27_043756) do
     t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index [nil], name: "index_users_on_confirmation_token", unique: true
-    t.index [nil], name: "index_users_on_unlock_token", unique: true
   end
 
 end
