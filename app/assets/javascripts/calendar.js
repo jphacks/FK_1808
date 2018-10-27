@@ -8,6 +8,7 @@ function eventCalendar() {
     "熊本県","大分県","宮崎県","鹿児島県","沖縄県"
   ];
   var calendar = $('#calendar').fullCalendar({
+    themeSystem: 'bootstrap4',
     header: {
       left: '',
       center: 'title',
@@ -19,6 +20,7 @@ function eventCalendar() {
     },
     dayClick: function(event) {
       var place = window.prompt("場所を入力 (e.g. 福岡県, 山口県, 東京都)")
+      
       if (map.indexOf(place) < 0) {
         alert("都道府県を入力してください")
         return
@@ -58,7 +60,9 @@ function eventGroupsCalendar() {
     },
     events:  'groups/events.json',
     eventClick: function(event) { //イベントをクリックしたときに実行
-      console.log(location.url)
+      var id = event.id
+      var url = "/groups/" + id + "/edit"
+      location.href = url
     },
   });
   return calendar
