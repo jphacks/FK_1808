@@ -32,15 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-<<<<<<< HEAD
 gem 'devise'
 gem 'omniauth-line'
-=======
-
-gem 'devise'
-gem 'omniauth-line'
-
->>>>>>> 4eed7e68972b2200824aba91ca27dc2ac13e7dcb
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
