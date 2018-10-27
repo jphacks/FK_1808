@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    omniauth_callbacks: "omniauth_callbacks"
+  }
   get 'groups/index'
-  devise_for :users
   root "static_pages#index"
   resources :schedules, only: [:create]
   resources :groups, only: [:index]

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_102737) do
+ActiveRecord::Schema.define(version: 2018_10_27_134427) do
 
   create_table "groups", force: :cascade do |t|
     t.datetime "start"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2018_10_27_102737) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
-    t.string "username"
+    t.string "name"
     t.integer "gender"
     t.string "prefecture"
     t.integer "old"
