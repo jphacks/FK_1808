@@ -1,8 +1,7 @@
 <header>
     <nav>
         <% if user_signed_in? %>
-            <strong><%= link_to current_user.username, "#" %></strong>
-            <%# <%= link_to 'プロフィール変更', edit_user_registration_path %> %>
+            <strong><%= link_to current_user.username, show_path %></strong>
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         <% else %>
             <%= link_to "LINE Login", user_line_omniauth_authorize_path %>
