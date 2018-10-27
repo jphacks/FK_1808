@@ -2,6 +2,5 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     omniauth_callbacks: "omniauth_callbacks"
   }
-  root 'pages#index'
-  get '/show', to: 'pages#show'
+  root 'static_pages#index'
 end
