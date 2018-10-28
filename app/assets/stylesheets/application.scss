@@ -115,7 +115,8 @@ main {
 }
 input[type=text],
 input[type=email],
-input[type=password] {
+input[type=password],
+input[type=submit]{
   width: 95%;
 }
 input[type=submit] {

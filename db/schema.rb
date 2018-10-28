@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_134427) do
+ActiveRecord::Schema.define(version: 2018_10_27_191916) do
 
   create_table "groups", force: :cascade do |t|
     t.datetime "start"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2018_10_27_134427) do
     t.string "prefecture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "store_name"
+    t.string "location"
   end
 
   create_table "schedules", force: :cascade do |t|
