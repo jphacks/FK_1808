@@ -16,7 +16,22 @@ function eventCalendar() {
     events:  'events.json',
     selectable: true,
     eventClick: function(event) { //イベントをクリックしたときに実行
-      console.log(location.url)
+      if (event.color == "red") {
+        $.ajax({
+          type: "GET",
+          url: "/groups/"+event.id
+        }).done(function(data, text, jq){
+          console.log(data);
+          $("#exampleModalCenterTitle").text(data.store_name);
+          $("#modal-body--content").append('<li>都道府県' + data.prefecture + '</li>')
+          $("#modal-body--content").append('<li>位置情報' + data.location + '</li>')
+          $("#modal-body--content").append('<li>ウェブサイト <a href=' + data.url + '>' + data.url + '</a></li>')
+          $("#modal_box").modal('show');
+        });
+        //        var id = event.id
+        //        var path = "/groups/" + id
+        //        location.href = path
+      }
     },
     dayClick: function(event) {
       var place = window.prompt("場所を入力 (e.g. 福岡県, 山口県, 東京都)")
@@ -58,7 +73,7 @@ function eventGroupsCalendar() {
       left: '',
       center: 'title',
     },
-    events:  'groups/events.json',
+    events:  'group/events.json',
     eventClick: function(event) { //イベントをクリックしたときに実行
       var id = event.id
       var url = "/groups/" + id + "/edit"

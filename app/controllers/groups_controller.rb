@@ -6,6 +6,15 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def show 
+    @group = Group.find(params[:id])
+    respond_to do |format|
+      format.json {
+        render json: @group
+      }
+    end
+  end
+
   def update
     @group = Group.find(params[:id])
     if @group.book
@@ -28,10 +37,9 @@ class GroupsController < ApplicationController
       format.json {
         res = []
         @groups.each do |group|
-          res << {id: group.id, title: group.url, start: group.start}
+          res << {id: group.id, title: group.store_name, start: group.start, color: "red"}
         end
         render json: res
-        
       }
     end
   end
