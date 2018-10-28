@@ -21,3 +21,9 @@ end
                    start: DateTime.new(2018, 10, day+1))
   end
 end
+
+Group.create(url: "https://www.hotpepper.jp/strJ000026200/",
+             start: DateTime.tomorrow,
+             prefecture: "福岡県",
+             store_name: "本格地鶏料理　居酒屋　もりもり",
+             location: "福岡県福岡市博多区博多駅東１－1－３３はかた近代ビルB1F")

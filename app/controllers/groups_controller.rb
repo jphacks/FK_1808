@@ -37,7 +37,7 @@ class GroupsController < ApplicationController
       format.json {
         res = []
         @groups.each do |group|
-          res << {id: group.id, title: group.store_name, start: group.start, color: "red"}
+          res << {id: group.id, title: group.prefecture, start: group.start }
         end
         render json: res
       }

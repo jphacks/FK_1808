@@ -8,6 +8,16 @@ class SchedulesController < ApplicationController
     @schedule = current_user.schedules.find_by(start: date)
     @schedule = current_user.schedules.build(start: date, title: "予定なし", prefecture: params[:prefecture]) unless @schedule
     if @schedule.save
+      date = @schedule.start.to_s.split(" ")[0]
+      @group = Group.where(start: date).last
+      if @group
+        if @group.users.count >= 4
+          @group = Group.create(prefecture: @schedule.prefecture, start: @schedule.start)
+        end
+      else 
+        @group = Group.create(prefecture: @schedule.prefecture, start: @schedule.start)
+      end
+      @group.users << @schedule.user
       render json: @schedule.to_json(only: [:title, :start])
     else
       
