@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
-  <%= link_to "エン交", root_path, class: "navbar-brand"%>
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "enkou_logo.png", :height => "70"%>
+  <% end %>
   <!-- Links -->
+  
   <ul class="navbar-nav mr-auto">
   </ul>
 
@@ -9,8 +12,9 @@
     <li class="nav-item">
       <% if current_user %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"%>
+        <%= link_to current_user.name, show_path(current_user.id) ,class: "nav-link" %>
       <% else %>
-        <%= link_to "ログイン", new_user_session_path, class: "nav-link"%>
+        <%= link_to "LINEでログイン", user_line_omniauth_authorize_path, class: "nav-link"%>
       <% end %>
     </li>
   </ul>

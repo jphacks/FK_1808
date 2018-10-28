@@ -13,6 +13,7 @@
   -o-box-sizing: border-box; /* opera */
   box-sizing: border-box; /* generic */
 }
+
 *:after,
 *:before,
 *:focus {
@@ -92,6 +93,17 @@ header .header--nav li a:focus {
   color: #fff;
   text-decoration: underline;
 }
+.navbar-nav{
+  margin-top: 30px;
+  .nav-link {
+    color: #fff;
+    float: right;
+    margin-right: 10px;
+    font-size: 30px;
+  }
+  
+}
+
 
 main {
   background: #fff;
@@ -103,7 +115,8 @@ main {
 }
 input[type=text],
 input[type=email],
-input[type=password] {
+input[type=password],
+input[type=submit]{
   width: 95%;
 }
 input[type=submit] {
@@ -123,6 +136,32 @@ input[type=submit] {
   background: #ddd;
   color: #666;
 }
+
+//user_views
+.contents {
+  label {
+    font-size: 30px;
+    margin: 0;
+    padding: 10px 0;
+
+  }
+
+  .content {
+    padding: 0;
+    margin: 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    
+    h2{
+      
+    }
+
+  }
+
+}
+
 
   /* rwd__iPad (portrait and landscape) */
 @media only screen and (min-device-width : 850px) {
