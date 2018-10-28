@@ -1,24 +1,7 @@
-# README
+# -エン×交　エンジニアの交流の場をコミット
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
 
-Things you may want to cover:
+### 開発背景  
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+とある雑誌の一面に「2度と合コンしたくない企業というトピック」があり、エンジニアに対し「開発系にあたるとハズレ。コミュ力が弱い。目が合わない。声が小さい。合コンやってる意味がない」という散々な評価がなされていた。その理由を考えたところ、私たちのチームは一般人とエンジニアの間には大きな壁があるという結論に至った。
