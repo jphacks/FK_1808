@@ -1,6 +1,6 @@
 # エン×交　エンジニアの交流の場をコミット
 
-[[!エン×交 DEMO_Movie](./app/assets/images/enkou_logo.png)]  (https://youtu.be/fgHIDS5z6AQ)
+[![エン×交 DEMO_Movie](./app/assets/images/enkou_logo.png)]  (https://youtu.be/fgHIDS5z6AQ)
 
 ## [エン×交 DEMO_Movie](https://youtu.be/fgHIDS5z6AQ)  
 
