@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'groups/index'
+  devise_for :users
+  root "static_pages#index"
+  resources :schedules, only: [:create]
+  resources :groups, only: [:index, :edit, :update, :show]
+  resources :users, only: [:edit, :update]
+  get "/events", to: "schedules#events"
+  get "/group/events", to: "groups#groups"
 end

@@ -1,0 +1,130 @@
+@import 'bootstrap';
+@import 'fullcalendar';
+@import './*';
+
+@charset "UTF-8";
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+* {
+  -webkit-box-sizing: border-box; /* for webkit */
+  -moz-box-sizing: border-box; /* mozilla */
+  -o-box-sizing: border-box; /* opera */
+  box-sizing: border-box; /* generic */
+}
+*:after,
+*:before,
+*:focus {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body,
+header,
+footer,
+main,
+nav,
+section,
+article,
+figure,
+aside {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  word-break: break-all;
+  counter-reset: number 0;
+}
+header {
+  background: #eee;
+}
+header h1 {
+  font-size: 26px;
+  padding: 6px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 14px;
+}
+header .header--txt {
+  font-style: italic;
+  font-size: 20px;
+  color: #222;
+  font-style: italic;
+  margin-left: 10px;
+  margin-bottom: 3px;
+  float: left;
+}
+header .header--img {
+  border-radius: 50%;
+  margin-right: 10px;
+  float: right;
+}
+header .header--nav {
+  background: #999;
+}
+header .header--nav ul {
+  font-size: 0;
+  text-align: center;
+}
+header .header--nav li {
+  display: inline-block;
+  background: #777;
+  border-left: 2px solid #ccc;
+  font-size: 18px;
+  text-align: center;
+  margin: 0 auto;
+}
+header .header--nav li a,
+header .header--nav li a:visited {
+  display: block;
+  color: #dda;
+  text-decoration: none;
+  padding: 3px 5px;
+}
+header .header--nav li a:hover,
+header .header--nav li a:active,
+header .header--nav li a:focus {
+  background: #555;
+  color: #fff;
+  text-decoration: underline;
+}
+
+main {
+  background: #fff;
+}
+.content {
+  width: 400px;
+  margin: 0 auto;
+  padding: 4px 8px;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=submit]{
+  width: 95%;
+}
+input[type=submit] {
+  border-radius: 10px;
+}
+
+.clear:after{
+  content: "";
+  display: block;
+  clear: both;
+  padding: 4px 0;
+}
+
+.number:before {
+  counter-increment: number 1;
+  content: counter(number) ". ";
+  background: #ddd;
+  color: #666;
+}
+
+  /* rwd__iPad (portrait and landscape) */
+@media only screen and (min-device-width : 850px) {
+}
