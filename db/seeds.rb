@@ -37,7 +37,7 @@ Group.last.users << User.find(4)
 3.times do |n| 
   Group.create(start: DateTime.new(2018, 10, (n+1)*5),
                prefecture: "福岡県") 
-Group.last.users << User.find(5)
+Group.last.users << User.first
 Group.last.users << User.find(9)
 Group.last.users << User.find(15)
 Group.last.users << User.find(4)
@@ -45,7 +45,7 @@ end
 5.times do |n| 
   Group.create(start: DateTime.new(2018, 10, (n * 5)+2),
                prefecture: "福岡県") 
-Group.last.users << User.find(33)
+Group.last.users << User.first
 Group.last.users << User.find(53)
 Group.last.users << User.find(45)
 Group.last.users << User.find(4)

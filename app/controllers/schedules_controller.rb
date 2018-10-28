@@ -24,6 +24,13 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def destroy
+    @schedule = Schedule.find(params[:id])
+    if @schedule.destroy
+      render json: {status: 200}
+    end
+  end
+
   def events
     @schedules = current_user.schedules
     @groups = current_user.groups.where(book: true)
@@ -31,7 +38,7 @@ class SchedulesController < ApplicationController
       format.json {
         res = []
         @schedules.each do |schedule|
-          res << {id: schedule.id, title: schedule.title, start: schedule.start}
+          res << {id: schedule.id, title: schedule.prefecture, start: schedule.start}
         end
         @groups.each do |group|
           res << {id: group.id, title: group.store_name, start: group.start, color: "red"}

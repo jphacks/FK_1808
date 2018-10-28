@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!, only: :index
+  
   def index
   end
 
@@ -37,7 +39,7 @@ class GroupsController < ApplicationController
       format.json {
         res = []
         @groups.each do |group|
-          res << {id: group.id, title: group.prefecture, start: group.start }
+          res << {id: group.id, title: group.prefecture, start: group.start, textColor: "white" }
         end
         render json: res
       }
