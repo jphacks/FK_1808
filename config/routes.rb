@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'groups/index'
   devise_for :users
   root "static_pages#index"
   resources :schedules, only: [:create]

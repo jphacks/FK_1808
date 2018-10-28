@@ -31,7 +31,7 @@ class SchedulesController < ApplicationController
       format.json {
         res = []
         @schedules.each do |schedule|
-          res << {id: schedule.id, title: schedule.title, start: schedule.start}
+          res << {id: schedule.id, title: schedule.prefecture, start: schedule.start}
         end
         @groups.each do |group|
           res << {id: group.id, title: group.store_name, start: group.start, color: "red"}
