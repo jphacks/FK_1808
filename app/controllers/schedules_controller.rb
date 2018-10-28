@@ -24,6 +24,13 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def destroy
+    @schedule = Schedule.find(params[:id])
+    if @schedule.destroy
+      render json: {status: 200}
+    end
+  end
+
   def events
     @schedules = current_user.schedules
     @groups = current_user.groups.where(book: true)

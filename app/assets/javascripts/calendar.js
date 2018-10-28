@@ -31,6 +31,13 @@ function eventCalendar() {
         //        var id = event.id
         //        var path = "/groups/" + id
         //        location.href = path
+      } else {
+        $.ajax({
+          type: "DELETE",
+          url: "/schedules/"+event.id
+        }).done(function(data, text, jq){
+          calendar.fullCalendar('refetchEvents');
+        });
       }
     },
     dayClick: function(event) {
