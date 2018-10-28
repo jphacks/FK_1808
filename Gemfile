@@ -39,6 +39,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'omniauth-line'
 
+gem 'line-bot-api'
+gem 'dotenv-rails'
+
 gem 'bootstrap'
 gem 'devise-bootstrap-views'
 
