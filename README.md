@@ -1,8 +1,8 @@
 # エン×交　エンジニアの交流の場をコミット
 
-(./app/assets/images/enkou_logo.png)  
+[[!エン×交 DEMO_Movie](./app/assets/images/enkou_logo.png)]  
 
-## [!エン×交 DEMO_Movie](https://youtu.be/fgHIDS5z6AQ)  
+## [エン×交 DEMO_Movie](https://youtu.be/fgHIDS5z6AQ)  
 
 ### 開発背景  
 　とある雑誌の一面に「2度と合コンしたくない企業」というトピックがあり、エンジニアに対し「開発系にあたるとハズレ。コミュ力が弱い。目が合わない。声が小さい。合コンやってる意味がない」という散々な評価がなされていた。その理由を考えたところ、私達のチームは一般人とエンジニアの間には大きな壁があるという結論に至った。  
