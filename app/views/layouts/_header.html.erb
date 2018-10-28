@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "enkou_logo.png", :height => "80"%>
+    <%= image_tag "enkou_logo.png", :height => "70"%>
   <% end %>
   <!-- Links -->
   
@@ -11,8 +11,8 @@
   <ul class="navbar-nav">
     <li class="nav-item">
       <% if current_user %>
-        <%= link_to current_user.name, show_path(current_user.id) ,class: "nav-link" %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"%>
+        <%= link_to current_user.name, show_path(current_user.id) ,class: "nav-link" %>
       <% else %>
         <%= link_to "LINEでログイン", user_line_omniauth_authorize_path, class: "nav-link"%>
       <% end %>
