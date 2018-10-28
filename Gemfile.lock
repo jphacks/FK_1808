@@ -98,6 +98,8 @@ GEM
       jquery-rails (>= 4.0.5, < 5.0.0)
       jquery-ui-rails (>= 5.0.2)
       momentjs-rails (>= 2.9.0)
+    gimei (0.3.0)
+      romaji
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashie (3.5.7)
@@ -199,6 +201,8 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    romaji (0.2.4)
+      rake (>= 0.8.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
     sass (3.6.0)
@@ -264,6 +268,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views
   fullcalendar-rails
+  gimei
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
