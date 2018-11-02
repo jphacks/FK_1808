@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   get "/events", to: "schedules#events"
   get "/group/events", to: "groups#groups"
+  get "/temp", to: "static_pages#tenpo"
 end
